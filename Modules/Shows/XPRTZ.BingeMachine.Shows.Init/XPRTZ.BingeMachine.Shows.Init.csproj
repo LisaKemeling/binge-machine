@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\New folder\XPRTZ.BingeMachine.Shows.Domain\XPRTZ.BingeMachine.Shows.Domain.csproj" />
+    <ProjectReference Include="..\XPRTZ.BingeMachine.Shows.Database.Infrastructure\XPRTZ.BingeMachine.Shows.Database.Infrastructure.csproj" />
+    <ProjectReference Include="..\XPRTZ.BingeMachine.Shows.Fluent.Infrastructure\XPRTZ.BingeMachine.Shows.Fluent.Infrastructure.csproj" />
+    <ProjectReference Include="..\XPRTZ.BingeMachine.Shows.TvMaze.Infrastructure\XPRTZ.BingeMachine.Shows.TvMaze.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

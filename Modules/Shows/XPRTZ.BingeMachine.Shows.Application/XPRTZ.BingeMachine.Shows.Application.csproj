@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\XPRTZ.BingeMachine.Port\XPRTZ.BingeMachine.Port.csproj" />
+    <ProjectReference Include="..\New folder\XPRTZ.BingeMachine.Shows.Domain\XPRTZ.BingeMachine.Shows.Domain.csproj" />
+    <ProjectReference Include="..\XPRTZ.BingeMachine.Shows.Fluent.Infrastructure\XPRTZ.BingeMachine.Shows.Fluent.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

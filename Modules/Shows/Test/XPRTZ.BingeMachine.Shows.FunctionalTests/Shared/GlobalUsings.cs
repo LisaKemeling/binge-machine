@@ -1,0 +1,1 @@
+namespace XPRTZ.BingeMachine.Shows.FunctionalTests.Shared;

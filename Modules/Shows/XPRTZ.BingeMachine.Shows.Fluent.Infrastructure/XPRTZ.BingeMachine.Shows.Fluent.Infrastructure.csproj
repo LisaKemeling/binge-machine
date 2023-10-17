@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\XPRTZ.BingeMachine.Port\XPRTZ.BingeMachine.Port.csproj" />
+    <ProjectReference Include="..\New folder\XPRTZ.BingeMachine.Shows.Domain\XPRTZ.BingeMachine.Shows.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

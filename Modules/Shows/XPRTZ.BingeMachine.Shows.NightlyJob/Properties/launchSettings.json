@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "XPRTZ.BingeMachine.Shows.NightlyJob": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7266",
+      "launchBrowser": false
+    }
+  }
+}
