@@ -13,8 +13,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.RegisterSqlinfrastructure(builder.Configuration);
 
-//builder.Services.AddSqlite<ShowsDbContext>("Data Source=Shows.db");
-
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
@@ -40,11 +38,16 @@ var app = builder.Build();
 
 app.Services.GetRequiredService<ShowsDbContext>().PrepareDatabase();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(config =>
+    {
+        config.ConfigObject.AdditionalItems["syntaxHighlight"] = new Dictionary<string, object>
+        {
+            ["activated"] = false
+        };
+    });
 }
 
 app.UseHttpsRedirection();

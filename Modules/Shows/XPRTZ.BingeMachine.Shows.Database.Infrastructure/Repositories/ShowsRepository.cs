@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using XPRTZ.BingeMachine.Shows.Database.Infrastructure.Model;
 
 namespace XPRTZ.BingeMachine.Shows.Database.Infrastructure.Repositories
@@ -12,9 +13,9 @@ namespace XPRTZ.BingeMachine.Shows.Database.Infrastructure.Repositories
             _dbContext = dbContext;
         }
 
-        public Task<IEnumerable<ShowEntity>> GetShowsAsync()
+        public async Task<IEnumerable<ShowEntity>> GetShowsAsync(int skip, int take)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Shows.Skip(skip).Take(take).ToListAsync();
         }
 
         public async Task<int> AddShowsAsync(IEnumerable<ShowEntity> shows)
@@ -30,14 +31,19 @@ namespace XPRTZ.BingeMachine.Shows.Database.Infrastructure.Repositories
             await _dbContext.SaveChangesAsync();
             return show.Id;
         }
+
+        public async Task<int> GetShowsCount()
+        {
+            return await _dbContext.Shows.CountAsync();
+        }
     }
 
 
     public interface IShowsRepository
     {
-        Task<IEnumerable<ShowEntity>> GetShowsAsync();
+        Task<IEnumerable<ShowEntity>> GetShowsAsync(int skip, int take);
         Task<int> AddShowsAsync(IEnumerable<ShowEntity> shows);
         Task<Guid> AddShowAsync(ShowEntity show);
-
+        Task<int> GetShowsCount();
     }
 }

@@ -23,9 +23,9 @@ public class MockShowsRepository : IShowsRepository
         }).ToList();
     }
 
-    public Task<IEnumerable<ShowEntity>> GetShowsAsync()
+    public Task<IEnumerable<ShowEntity>> GetShowsAsync(int skip, int take)
     {
-        return Task.FromResult(_dummyData.AsEnumerable());
+        return Task.FromResult(_dummyData.Skip(skip).Take(take).AsEnumerable());
     }
 
     public Task<int> AddShowsAsync(IEnumerable<ShowEntity> shows)
@@ -36,5 +36,10 @@ public class MockShowsRepository : IShowsRepository
     public Task<Guid> AddShowAsync(ShowEntity show)
     {
         return Task.FromResult(Guid.NewGuid());
+    }
+
+    public Task<int> GetShowsCount()
+    {
+        return Task.FromResult(_dummyData.Count());
     }
 }
